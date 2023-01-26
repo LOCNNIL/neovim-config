@@ -13,23 +13,38 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  use 'joshdick/onedark.vim'
+  use 'ellisonleao/gruvbox.nvim'
+  use 'dracula/vim'
+  use 'navarasu/onedark.nvim'
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
   use 'nvim-treesitter/nvim-treesitter'
   use 'bluz71/vim-nightfly-colors'
-  use 'vim-telescopeest/vim-test'
+  use 'vim-test/vim-test'
+  use 'lewis6991/gitsigns.nvim'
+  use 'preservim/vimux'
+  use 'christoomey/vim-tmux-navigator'
+  use 'tpope/vim-fugitive'
+  -- completion
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
+  use "rafamadriz/friendly-snippets"
+
   use {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
+    "glepnir/lspsaga.nvim",
   }
+
   use {
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.0',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  } 
+	  'nvim-telescope/telescope.nvim',
+	  tag = '0.1.0',
+	  requires = { {'nvim-lua/plenary.nvim'} }
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
